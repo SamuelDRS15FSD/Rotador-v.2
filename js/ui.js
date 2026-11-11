@@ -569,7 +569,7 @@ export function openAddProductForm(productId = null, mode = 'edit') {
     document.getElementById('product-code').value = parentProduct.plu || parentProduct.code || '';
     document.getElementById('product-provider').value = parentProduct.provider || parentProduct.proveedor || '';
     document.getElementById('product-section').value = parentProduct.section || currentSection;
-    
+
     const loteInput = document.getElementById('product-lote');
     if (loteInput) loteInput.value = `Lote ${nextBatchNum}`;
 
@@ -600,7 +600,7 @@ export function openAddProductForm(productId = null, mode = 'edit') {
     document.getElementById('product-name').value = product.name || '';
     document.getElementById('product-code').value = product.plu || product.code || '';
     document.getElementById('product-provider').value = product.provider || product.proveedor || '';
-    
+
     const loteInput = document.getElementById('product-lote');
     if (loteInput) loteInput.value = product.lote || product.batch || 'Lote 1';
 
@@ -1541,8 +1541,8 @@ export function renderCatalogModalList(searchFilter = '') {
   const filtered = catalog.filter(item => {
     if (!filter) return true;
     return (item.name || '').toLowerCase().includes(filter) ||
-           (item.code || '').toLowerCase().includes(filter) ||
-           (item.provider || '').toLowerCase().includes(filter);
+      (item.code || '').toLowerCase().includes(filter) ||
+      (item.provider || '').toLowerCase().includes(filter);
   });
 
   if (filtered.length === 0) {
